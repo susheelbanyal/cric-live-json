@@ -1,0 +1,22 @@
+{
+  "name": "cric-live-json",
+  "version": "1.0.4",
+  "description": "Get the json of cricket matches",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cric",
+    "live",
+    "api"
+  ],
+  "author": "Susheelkumar <susheel1688@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.3",
+    "cheerio": "^1.0.0-rc.2",
+    "lodash": "^4.17.11",
+    "request-promise": "^4.2.4"
+  }
+}
