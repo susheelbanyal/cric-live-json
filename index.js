@@ -15,8 +15,10 @@ function getLiveScore(id){
                     id: matchInfo.id,
                     type: matchInfo.type,
                     series: matchInfo.series.name,
+                    series_type: matchInfo.series.type,
                     status: matchInfo.status,
                     state: matchInfo.state,
+                    live_coverage: matchInfo.live_coverage,
                     startTime: matchInfo.start_time,
                     venue: { name: matchInfo.venue.name, location: matchInfo.venue.location }
                 };
@@ -26,6 +28,7 @@ function getLiveScore(id){
                     const score = {};
                     score.runRate = ((matchInfo || {}).score || {}).crr;
                     score.target = ((matchInfo || {}).score || {}).target;
+                    score.prevOvers = ((matchInfo || {}).score || {}).prev_overs;
                     score.detail = getScoreDetails((matchInfo || {}).score, teams);
                     if (output.state == 'inprogress') {
                         score.partnership = ((matchInfo || {}).score || {}).prtshp;
@@ -75,6 +78,7 @@ function getLastBallStatus(prevOvers) {
 function getPlayerInfo(playerArray, players){
     return playerArray.map(function(player){
         const playerDetail = getPlayerObj(player.id, players);
+        player.id = playerDetail.id;
         player.name = playerDetail.f_name;
         player.shortName = playerDetail.name;
         return player;
@@ -89,6 +93,7 @@ function getTeamInfo (team1, team2) {
     const teams = {};
     const assignTeamToObject = function(team) {
         teams[team.id] = {
+            id: team.id,
             name: team.name,
             shortName: team.s_name,
         }
