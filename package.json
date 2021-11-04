@@ -1,6 +1,6 @@
 {
   "name": "cric-live-json",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "Get the json of cricket matches",
   "main": "index.js",
   "scripts": {
@@ -11,13 +11,14 @@
     "live",
     "api"
   ],
-  "repository":"https://github.com/susheelbanyal/cric-live-json",
+  "repository": "https://github.com/susheelbanyal/cric-live-json",
   "author": "Susheelkumar <susheel1688@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.5.3",
     "cheerio": "^1.0.0-rc.2",
     "lodash": "^4.17.11",
+    "request": "^2.88.2",
     "request-promise": "^4.2.4"
   }
 }
